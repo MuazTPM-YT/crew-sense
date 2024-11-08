@@ -32,4 +32,4 @@ cd Automated-Braille-Conversion-Tool
 To start the application, run:
 
 ```bash
-python main.py
+python main.py```
