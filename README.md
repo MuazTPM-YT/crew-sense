@@ -29,3 +29,7 @@ To get started with this project, clone the repository and install the required 
 git clone https://github.com/yourusername/Automated-Braille-Conversion-Tool.git
 cd Automated-Braille-Conversion-Tool
 
+To start the application, run:
+
+```bash
+python main.py
