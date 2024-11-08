@@ -13,9 +13,9 @@ This project is an **Automated Braille Conversion Tool** that allows users to co
 ## File Structure
 
 - `main.py`: The main entry point to run the application, handling the integration of different components.
-- `File1.py`: Contains the logic for converting text and PDFs to braille, utilizing the `fitz` library for PDF parsing and processing.
-- `File2.py`: Handles UI animation and interaction, with support for button hover effects and transitions.
-- `File3.py`: Implements the text-to-speech conversion using the `pyttsx3` library and handles the UI elements related to text-to-speech.
+- `texttobrail.py`: Contains the logic for converting text and PDFs to braille, utilizing the `fitz` library for PDF parsing and processing.
+- `interface.py`: Handles UI animation and interaction, with support for button hover effects and transitions.
+- `texttospeech.py`: Implements the text-to-speech conversion using the `pyttsx3` library and handles the UI elements related to text-to-speech.
 
 ---
 
@@ -26,8 +26,7 @@ To get started with this project, clone the repository and install the required 
 ### Step 1: Clone the repository
 
 ```bash
-git clone https://github.com/yourusername/Automated-Braille-Conversion-Tool.git
-cd Automated-Braille-Conversion-Tool
+git clone https://github.com/MuazTPM-YT/crew-sense.git
 
 To start the application, run:
 python main.py
