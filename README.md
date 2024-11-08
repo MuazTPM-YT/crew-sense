@@ -30,6 +30,4 @@ git clone https://github.com/yourusername/Automated-Braille-Conversion-Tool.git
 cd Automated-Braille-Conversion-Tool
 
 To start the application, run:
-
-```bash
-python main.py```
+python main.py
