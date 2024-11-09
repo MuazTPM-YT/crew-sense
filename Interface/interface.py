@@ -1,6 +1,5 @@
 from PySide6 import QtWidgets, QtCore
 from PySide6.QtUiTools import QUiLoader
-from PySide6.QtCore import QPropertyAnimation, QRect, QEasingCurve
 
 loader = QUiLoader()
 
@@ -13,7 +12,6 @@ class InterfaceLoader(QtCore.QObject):
 
         self.ui.texttobraillebut.clicked.connect(self.texttobraille)
         self.ui.texttospeechbutt.clicked.connect(self.texttospeech)
-        self.ui.pdftobraillebut.clicked.connect(self.pdftobraille)
 
         self.apply_styles()
 
