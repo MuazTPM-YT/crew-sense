@@ -4,7 +4,6 @@ from Interface.interface import InterfaceLoader
 from TextToBrail.texttobrail import TextToBrailLoader  
 from TexttoSpeech.texttospeech import TextToSpeechLoader
 
-
 class AppManager:
     def __init__(self):
         self.app = QtWidgets.QApplication.instance() or QtWidgets.QApplication(sys.argv)
