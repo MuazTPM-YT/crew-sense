@@ -37,47 +37,11 @@
      <string>Crew Sense</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pdftobraillebut">
-    <property name="geometry">
-     <rect>
-      <x>420</x>
-      <y>520</y>
-      <width>471</width>
-      <height>111</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <family>Switzer</family>
-      <pointsize>-1</pointsize>
-      <bold>true</bold>
-     </font>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">QPushButton {
-                background-color: rgba(255, 255, 255, 0.1);
-                border-radius: 45px;
-                padding: 12px 20px;
-                margin: 10px;
-                font-size: 33px;
-                color: #ffffff;
-            }
-            QPushButton:hover {
-                background-color: rgba(255, 255, 255, 0.2);
-            }
-            QPushButton:pressed {
-                background-color: rgba(255, 255, 255, 0.3);
-            }</string>
-    </property>
-    <property name="text">
-     <string>Image to Braille</string>
-    </property>
-   </widget>
    <widget class="QPushButton" name="texttospeechbutt">
     <property name="geometry">
      <rect>
       <x>420</x>
-      <y>400</y>
+      <y>430</y>
       <width>471</width>
       <height>111</height>
      </rect>
@@ -113,7 +77,7 @@
     <property name="geometry">
      <rect>
       <x>420</x>
-      <y>280</y>
+      <y>300</y>
       <width>471</width>
       <height>111</height>
      </rect>
@@ -142,7 +106,7 @@
             }</string>
     </property>
     <property name="text">
-     <string>Text to Braille</string>
+     <string>Text/PDF/Image to Braille</string>
     </property>
    </widget>
   </widget>
