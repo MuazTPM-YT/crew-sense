@@ -1,11 +1,15 @@
 import fitz
+import cv2
+import pytesseract
 from PySide6 import QtCore, QtWidgets
 from PySide6.QtUiTools import QUiLoader
 from PySide6.QtGui import QTextDocument, QPageSize
 from PySide6.QtPrintSupport import QPrintDialog, QPrinter
+from PySide6.QtWidgets import QFileDialog
 from converters import Convertor
 
 loader = QUiLoader()
+pytesseract.pytesseract.tesseract_cmd = r'C:\Program Files\Tesseract-OCR\tesseract.exe'
 
 class TextToBrailLoader(QtCore.QObject):
     def __init__(self, app_manager=None):
@@ -21,6 +25,7 @@ class TextToBrailLoader(QtCore.QObject):
         self.ui.switchbutt.clicked.connect(self.switch)
         self.ui.openpdfbutt.clicked.connect(self.open_pdf)
         self.ui.printbutt.clicked.connect(self.save_and_print_braille_pdf)
+        self.ui.openimgbutt.clicked.connect(self.extract_text_from_image)
 
         self.languages = {"input_text": "English", "output_text": "Braille"}
         self.update_language_labels()
@@ -93,6 +98,15 @@ class TextToBrailLoader(QtCore.QObject):
             self.app_manager.show_main_window()  
         else:
             print("Error: app_manager is not set.")
+
+    def extract_text_from_image(self,image_path):
+        image_path, _ = QFileDialog.getOpenFileName(None, "Select an Image", "", "Image Files (*.png *.jpg *.jpeg *.bmp)")
+        image = cv2.imread(image_path)
+        gray_image = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
+        _, thresh_image = cv2.threshold(gray_image, 0, 255, cv2.THRESH_BINARY + cv2.THRESH_OTSU)
+
+        text = pytesseract.image_to_string(thresh_image)
+        self.ui.inputbox.setPlainText(text)
     
     def switch(self):
         self.languages["input_text"], self.languages["output_text"] = self.languages["output_text"], self.languages["input_text"]
@@ -123,4 +137,3 @@ class TextToBrailLoader(QtCore.QObject):
                 background-color: rgba(255, 255, 255, 0.3);
             }
         """)
-
